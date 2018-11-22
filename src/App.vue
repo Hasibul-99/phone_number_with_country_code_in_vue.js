@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HelloWorld value="" @formatedNumber="getPhoneNumber"/>
+    <HelloWorld :value="phoneNumber" :defaultCountry="defaultCountry"  @formatedNumber="getPhoneNumber"/>
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
     data() {
     return {
       phoneNumber: '',
+      defaultCountry: ''
     };
   },
   components: {
@@ -24,9 +25,14 @@ export default {
         console.log("number", number)
     }
   },
-  mounted() {
-      let tree = parsePhoneNumber("+08801683902204");
-      console.log("trre", tree);
+  created() {
+      let phoneNumberInfo = parsePhoneNumber("+4799999999");
+      
+      if (phoneNumberInfo && phoneNumberInfo.nationalNumber && phoneNumberInfo.country) {
+          this.phoneNumber = phoneNumberInfo.nationalNumber;
+          this.defaultCountry = phoneNumberInfo.country
+      }
+
   },
 }
 </script>

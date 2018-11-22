@@ -48,7 +48,7 @@
 
 <script>
 
-import { formatNumber, AsYouType, isValidNumber, findNumbers} from 'libphonenumber-js';
+import { formatNumber, AsYouType, isValidNumber} from 'libphonenumber-js';
 import allCountries from '../assets/all-countries';
 import getCountry from '../assets/default-country';
 
@@ -102,12 +102,6 @@ export default {
   },
   created() {
     if (this.value) {
-
-      // console.log("this.value", this.value);
-      
-      // let findNumber = parsePhoneNumber(this.value);
-      // console.log("findNumber", findNumber)
-      
       this.phone = this.value
     }
   },
