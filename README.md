@@ -1,3 +1,7 @@
+# Example 
+![screendemo](https://user-images.githubusercontent.com/34993664/48880805-405bb300-ee3c-11e8-9f6c-6b2eb6ec46e8.png)
+
+
 # phone-number-picker
 
 ## Project setup
